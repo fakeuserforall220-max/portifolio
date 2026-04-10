@@ -1,0 +1,222 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1.5rem 2rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar.scrolled {
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(99, 102, 241, 0.1);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+.dark .navbar.scrolled {
+  background: rgba(10, 10, 10, 0.9);
+  border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.navbar-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.navbar-logo {
+  flex-shrink: 0;
+}
+
+.logo-text {
+  font-size: 1.75rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #6366f1, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  cursor: pointer;
+  letter-spacing: -0.02em;
+  transition: transform 0.3s ease;
+}
+
+.gliding-tabs-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.gliding-tabs {
+  display: flex;
+  position: relative;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 
+    0 0 1px 0 rgba(99, 102, 241, 0.2),
+    0 8px 24px 0 rgba(99, 102, 241, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  padding: 0.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(99, 102, 241, 0.15);
+  gap: 0.25rem;
+}
+
+.dark .gliding-tabs {
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 
+    0 0 1px 0 rgba(99, 102, 241, 0.3),
+    0 8px 24px 0 rgba(99, 102, 241, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.tab-wrapper {
+  position: relative;
+  z-index: 2;
+}
+
+.tab-input {
+  display: none;
+}
+
+.tab-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 40px;
+  padding: 0 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: rgba(15, 23, 42, 0.6);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  user-select: none;
+}
+
+.dark .tab-label {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.tab-label:hover {
+  color: rgba(15, 23, 42, 0.9);
+}
+
+.dark .tab-label:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.tab-input:checked + .tab-label {
+  color: #6366f1;
+  text-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+}
+
+.dark .tab-input:checked + .tab-label {
+  color: #ffffff;
+}
+
+.tab-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.25rem;
+  height: 1.25rem;
+  padding: 0 0.35rem;
+  margin-left: 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  background: rgba(99, 102, 241, 0.15);
+  color: #6366f1;
+  border-radius: 999px;
+  transition: all 0.3s ease;
+}
+
+.tab-input:checked + .tab-label .tab-badge {
+  background: linear-gradient(135deg, #6366f1, #06b6d4);
+  color: #ffffff;
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.6);
+}
+
+.tab-glider {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  height: 40px;
+  width: calc((100% - 1rem) / 5);
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(6, 182, 212, 0.2));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 999px;
+  z-index: 1;
+  box-shadow: 
+    0 4px 16px rgba(99, 102, 241, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+.dark .tab-glider {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.3), rgba(6, 182, 212, 0.3));
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.nav-cta {
+  white-space: nowrap;
+}
+
+@media (max-width: 1200px) {
+  .tab-label {
+    padding: 0 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .gliding-tabs-wrapper {
+    display: none;
+  }
+
+  .navbar-container {
+    justify-content: space-between;
+  }
+
+  .nav-cta {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem 1.5rem;
+  }
+
+  .logo-text {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 1rem;
+  }
+
+  .navbar-actions {
+    gap: 0.5rem;
+  }
+}
