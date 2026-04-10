@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import WheelSelector from './WheelSelector'
-import { skills } from '@/utils/data'
+import { skills } from '../utils/data'
 
 export default function Skills() {
   const [activeCategory, setActiveCategory] = useState('frontend')
