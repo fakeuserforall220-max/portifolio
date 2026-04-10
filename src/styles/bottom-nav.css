@@ -1,0 +1,224 @@
+/* Bottom Navigation Bar */
+.bottom-nav-bar {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: space-evenly;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  box-shadow: 
+    0 0 1px 0 rgba(99, 102, 241, 0.1),
+    0 8px 24px 0 rgba(0, 0, 0, 0.08);
+  padding: 0.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(99, 102, 241, 0.15);
+  gap: 0.25rem;
+  transition: all 0.3s ease;
+}
+
+.dark .bottom-nav-bar {
+  background: rgba(15, 23, 42, 0.95);
+  box-shadow: 
+    0 0 1px 0 rgba(99, 102, 241, 0.2),
+    0 8px 24px 0 rgba(99, 102, 241, 0.15);
+  border-color: rgba(99, 102, 241, 0.2);
+}
+
+@media (max-width: 1024px) {
+  .bottom-nav-bar {
+    display: flex;
+  }
+}
+
+.bottom-nav-bar:hover {
+  box-shadow: 
+    0 0 1px 0 rgba(99, 102, 241, 0.2),
+    0 12px 32px 0 rgba(0, 0, 0, 0.12);
+}
+
+/* Nav Label */
+.nav-label {
+  position: relative;
+  padding: 12px 20px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  min-width: 50px;
+  z-index: 2;
+}
+
+.nav-input {
+  display: none;
+}
+
+.nav-label svg {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  fill: rgba(71, 85, 105, 0.6);
+  width: 22px;
+  height: 22px;
+  filter: drop-shadow(0 0 0 transparent);
+}
+
+.dark .nav-label svg {
+  fill: rgba(148, 163, 184, 0.6);
+}
+
+/* Hover State */
+.nav-label:hover svg {
+  fill: #6366f1;
+  opacity: 0.7;
+  transform: translateY(-2px);
+  filter: drop-shadow(0 0 8px rgba(99, 102, 241, 0.4));
+}
+
+/* Active Indicator */
+.nav-label::before {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 3px;
+  border-radius: 5px;
+  position: absolute;
+  left: 50%;
+  bottom: 6px;
+  background: linear-gradient(90deg, #6366f1, #06b6d4);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.4);
+}
+
+/* Active State */
+.nav-input:checked + div svg {
+  fill: #6366f1;
+  scale: 1.25;
+  margin-top: -8px;
+  filter: drop-shadow(0 0 12px rgba(99, 102, 241, 0.6));
+  animation: icon-bounce 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.dark .nav-input:checked + div svg {
+  fill: #8b5cf6;
+}
+
+@keyframes icon-bounce {
+  0% {
+    transform: scale(1) translateY(0);
+  }
+  50% {
+    transform: scale(1.3) translateY(-10px);
+  }
+  100% {
+    transform: scale(1.25) translateY(-8px);
+  }
+}
+
+.nav-input:checked ~ .nav-label::before {
+  width: 100%;
+  left: 0;
+  bottom: 6px;
+  animation: line-expand 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes line-expand {
+  0% {
+    width: 0%;
+    left: 50%;
+  }
+  100% {
+    width: 100%;
+    left: 0;
+  }
+}
+
+/* Glow Effect */
+.nav-input:checked ~ .nav-label::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: -1;
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+/* Badge */
+.nav-badge {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: linear-gradient(135deg, #6366f1, #06b6d4);
+  color: #ffffff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 10px;
+  min-width: 18px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.4);
+  animation: badge-pulse 2s ease-in-out infinite;
+  z-index: 3;
+}
+
+@keyframes badge-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .bottom-nav-bar {
+    bottom: 15px;
+    width: calc(100% - 40px);
+    max-width: 400px;
+  }
+
+  .nav-label {
+    padding: 10px 16px;
+  }
+
+  .nav-label svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bottom-nav-bar {
+    bottom: 10px;
+    width: calc(100% - 20px);
+    padding: 0.4rem;
+  }
+
+  .nav-label {
+    padding: 8px 14px;
+  }
+
+  .nav-label svg {
+    width: 18px;
+    height: 18px;
+  }
+}
