@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import ProjectCard from './ProjectCard'
-import { projects } from '@/utils/data'
+import { projects } from '../utils/data'
 
 export default function Projects() {
   return (
