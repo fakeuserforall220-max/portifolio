@@ -90,12 +90,6 @@ export const skills = {
     { name: 'Data Structures', icon: 'DS' },
     { name: 'Algorithms', icon: 'A' },
   ],
-  design: [
-    { name: 'UI Design', icon: 'UI' },
-    { name: 'UX Design', icon: 'UX' },
-    { name: 'Responsive Design', icon: 'RD' },
-    { name: 'Typography', icon: 'T' },
-  ],
 }
 
 export const highlights = [
