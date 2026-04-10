@@ -1,6 +1,7 @@
 
+
 import { motion } from 'framer-motion'
-import { socialLinks } from '@/utils/data'
+import { socialLinks } from '../utils/data'
 
 const icons = {
   github: (
