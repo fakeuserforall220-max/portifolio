@@ -1,4 +1,4 @@
-
+'use client'
 
 import { motion } from 'framer-motion'
 import { highlights } from '../utils/data'
