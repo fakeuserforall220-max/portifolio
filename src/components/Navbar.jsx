@@ -1,11 +1,12 @@
+'use client'
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import ThemeToggle from './ThemeToggle'
 import HamburgerMenu from './HamburgerMenu'
 import PremiumButton from './PremiumButton'
-import { navItems } from '@/utils/data'
-import useScrollSpy from '@/hooks/useScrollSpy'
+import { navItems } from '../utils/data'
+import useScrollSpy from '../hooks/useScrollSpy'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -43,7 +44,7 @@ export default function Navbar() {
 
         <div className="gliding-tabs-wrapper">
           <div className="gliding-tabs">
-            {navItems.map((item, index) => (
+            {navItems.map((item) => (
               <div key={item.id} className="tab-wrapper">
                 <input
                   type="radio"
