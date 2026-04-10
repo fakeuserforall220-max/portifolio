@@ -1,8 +1,9 @@
+'use client'
 
 import { useState, useEffect } from 'react'
 
 export default function useScrollSpy(navItems) {
-  const [activeSection, setActiveSection] = useState(navItems[0].id)
+  const [activeSection, setActiveSection] = useState(navItems[0]?.id || 'home')
 
   useEffect(() => {
     const handleScroll = () => {
