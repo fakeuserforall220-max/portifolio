@@ -1,4 +1,3 @@
-/* Social Links Wrapper */
 .social-wrapper {
   display: inline-flex;
   list-style: none;
@@ -10,7 +9,6 @@
   flex-wrap: wrap;
 }
 
-/* Social Icon */
 .social-icon {
   position: relative;
   background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
@@ -58,7 +56,6 @@
   fill: #94a3b8;
 }
 
-/* Tooltip */
 .tooltip {
   position: absolute;
   top: -10px;
@@ -108,7 +105,6 @@
   pointer-events: auto;
 }
 
-/* Platform Colors */
 .social-icon.github:hover {
   background: linear-gradient(135deg, #24292e 0%, #1a1e22 100%);
   box-shadow: 
@@ -116,11 +112,7 @@
     0 0 0 1px rgba(36, 41, 46, 0.2),
     0 0 30px rgba(36, 41, 46, 0.3);
 }
-
-.social-icon.github:hover svg {
-  fill: #ffffff;
-}
-
+.social-icon.github:hover svg { fill: #ffffff; }
 .social-icon.github:hover .tooltip,
 .social-icon.github:hover .tooltip::before {
   background: #24292e;
@@ -134,11 +126,7 @@
     0 0 0 1px rgba(0, 119, 181, 0.2),
     0 0 30px rgba(0, 119, 181, 0.3);
 }
-
-.social-icon.linkedin:hover svg {
-  fill: #ffffff;
-}
-
+.social-icon.linkedin:hover svg { fill: #ffffff; }
 .social-icon.linkedin:hover .tooltip,
 .social-icon.linkedin:hover .tooltip::before {
   background: #0077b5;
@@ -152,11 +140,7 @@
     0 0 0 1px rgba(29, 161, 242, 0.2),
     0 0 30px rgba(29, 161, 242, 0.3);
 }
-
-.social-icon.twitter:hover svg {
-  fill: #ffffff;
-}
-
+.social-icon.twitter:hover svg { fill: #ffffff; }
 .social-icon.twitter:hover .tooltip,
 .social-icon.twitter:hover .tooltip::before {
   background: #1da1f2;
@@ -170,11 +154,7 @@
     0 0 0 1px rgba(228, 64, 95, 0.2),
     0 0 30px rgba(228, 64, 95, 0.3);
 }
-
-.social-icon.instagram:hover svg {
-  fill: #ffffff;
-}
-
+.social-icon.instagram:hover svg { fill: #ffffff; }
 .social-icon.instagram:hover .tooltip,
 .social-icon.instagram:hover .tooltip::before {
   background: linear-gradient(135deg, #e4405f 0%, #c13584 50%, #833ab4 100%);
@@ -188,18 +168,13 @@
     0 0 0 1px rgba(99, 102, 241, 0.2),
     0 0 30px rgba(99, 102, 241, 0.3);
 }
-
-.social-icon.email:hover svg {
-  fill: #ffffff;
-}
-
+.social-icon.email:hover svg { fill: #ffffff; }
 .social-icon.email:hover .tooltip,
 .social-icon.email:hover .tooltip::before {
   background: #6366f1;
   color: #ffffff;
 }
 
-/* Glow Effect */
 .social-icon::before {
   content: '';
   position: absolute;
@@ -216,37 +191,14 @@
   opacity: 0.6;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
-  .social-wrapper {
-    gap: 0.75rem;
-    padding: 2rem 0;
-  }
-
-  .social-icon {
-    width: 50px;
-    height: 50px;
-  }
-
-  .social-icon svg {
-    width: 22px;
-    height: 22px;
-  }
-
-  .tooltip {
-    font-size: 0.8rem;
-    padding: 0.4rem 0.8rem;
-  }
+  .social-wrapper { gap: 0.75rem; padding: 2rem 0; }
+  .social-icon { width: 50px; height: 50px; }
+  .social-icon svg { width: 22px; height: 22px; }
+  .tooltip { font-size: 0.8rem; padding: 0.4rem 0.8rem; }
 }
 
 @media (max-width: 480px) {
-  .social-icon {
-    width: 46px;
-    height: 46px;
-  }
-
-  .social-icon svg {
-    width: 20px;
-    height: 20px;
-  }
+  .social-icon { width: 46px; height: 46px; }
+  .social-icon svg { width: 20px; height: 20px; }
 }
