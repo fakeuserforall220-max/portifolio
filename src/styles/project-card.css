@@ -1,4 +1,3 @@
-/* Project Card Container */
 .project-card-parent {
   width: 100%;
   max-width: 350px;
@@ -26,7 +25,6 @@
     rgba(99, 102, 241, 0.3) 0px 25px 25px -5px;
 }
 
-/* Glass Morphism Overlay */
 .card-glass {
   transform-style: preserve-3d;
   position: absolute;
@@ -46,7 +44,6 @@
   transition: all 0.6s ease-in-out;
 }
 
-/* Card Content */
 .card-content {
   padding: 120px 40px 0px 30px;
   transform: translate3d(0, 0, 26px);
@@ -72,7 +69,6 @@
   font-weight: 500;
 }
 
-/* Card Bottom */
 .card-bottom {
   padding: 15px;
   transform-style: preserve-3d;
@@ -87,7 +83,6 @@
   z-index: 3;
 }
 
-/* View More Button */
 .view-more {
   display: flex;
   align-items: center;
@@ -128,7 +123,6 @@
   stroke: #fbbf24;
 }
 
-/* Technology Badges */
 .social-buttons-container {
   display: flex;
   gap: 10px;
@@ -190,7 +184,6 @@
   color: #1e293b;
 }
 
-/* Logo Circles */
 .card-logo {
   position: absolute;
   right: 0;
@@ -265,7 +258,6 @@
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
-/* Hover Effects */
 .project-card-parent:hover .project-card {
   transform: rotate3d(1, 1, 0, 25deg);
   box-shadow: 
@@ -296,47 +288,27 @@
   transform: translate3d(0, 0, 120px);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .project-card-parent {
     max-width: 320px;
     height: 380px;
   }
-
   .card-content {
     padding: 100px 30px 0px 25px;
   }
-
   .card-title {
     font-size: 20px;
   }
-
   .card-text {
     font-size: 14px;
   }
-
   .social-button {
     width: 35px;
     height: 35px;
   }
-
-  .circle1 {
-    width: 160px;
-  }
-
-  .circle2 {
-    width: 135px;
-  }
-
-  .circle3 {
-    width: 110px;
-  }
-
-  .circle4 {
-    width: 85px;
-  }
-
-  .circle5 {
-    width: 55px;
-  }
+  .circle1 { width: 160px; }
+  .circle2 { width: 135px; }
+  .circle3 { width: 110px; }
+  .circle4 { width: 85px; }
+  .circle5 { width: 55px; }
 }
