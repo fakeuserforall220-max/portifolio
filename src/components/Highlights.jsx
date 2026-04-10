@@ -1,7 +1,7 @@
 
 
 import { motion } from 'framer-motion'
-import { highlights } from '@/utils/data'
+import { highlights } from '../utils/data'
 
 const icons = {
   graduation: (
