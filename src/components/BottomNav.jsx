@@ -1,9 +1,8 @@
 
 
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { navItems } from '@/utils/data'
-import useScrollSpy from '@/hooks/useScrollSpy'
+import { motion } from 'framer-motion'
+import { navItems } from '../utils/data'
+import useScrollSpy from '../hooks/useScrollSpy'
 
 const icons = {
   home: (
@@ -42,7 +41,7 @@ export default function BottomNav() {
 
   return (
     <nav className="bottom-nav-bar">
-      {navItems.map((item, index) => (
+      {navItems.map((item) => (
         <label
           key={item.id}
           title={item.label}
