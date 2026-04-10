@@ -1,4 +1,4 @@
-
+'use client'
 
 import { motion } from 'framer-motion'
 import { socialLinks } from '../utils/data'
